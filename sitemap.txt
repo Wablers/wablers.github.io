@@ -5,7 +5,7 @@ https://wablers.github.io/2023/11/18/hello-world/
 https://wablers.github.io/category/index.html
 https://wablers.github.io/tag/index.html
 https://wablers.github.io/
+https://wablers.github.io/tags/Medium/
 https://wablers.github.io/tags/Hash/
 https://wablers.github.io/tags/Rust/
-https://wablers.github.io/tags/Medium/
 https://wablers.github.io/categories/LeetCode-Top100-Liked/
