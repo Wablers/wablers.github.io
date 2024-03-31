@@ -6,7 +6,7 @@
   <link href="https://wablers.github.io/atom.xml" rel="self"/>
   
   <link href="https://wablers.github.io/"/>
-  <updated>2024-02-08T03:09:40.884Z</updated>
+  <updated>2024-03-31T14:18:14.134Z</updated>
   <id>https://wablers.github.io/</id>
   
   <author>
@@ -15,6 +15,62 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>将域名解析到 Cloudflare ：简易指南</title>
+    <link href="https://wablers.github.io/2024/03/31/%E5%B0%86%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90%E5%88%B0Cloudflare%EF%BC%9A%E5%BF%AB%E9%80%9F%E6%8C%87%E5%8D%97/"/>
+    <id>https://wablers.github.io/2024/03/31/%E5%B0%86%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90%E5%88%B0Cloudflare%EF%BC%9A%E5%BF%AB%E9%80%9F%E6%8C%87%E5%8D%97/</id>
+    <published>2024-03-31T13:30:16.000Z</published>
+    <updated>2024-03-31T14:18:14.134Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="第一步：注册-Cloudflare-账户"><a href="#第一步：注册-Cloudflare-账户" class="headerlink" title="第一步：注册 Cloudflare 账户"></a>第一步：注册 Cloudflare 账户</h4><p>首先，前往 Cloudflare 官方网站并注册一个账户。这个过程非常简单，只需提供一些基本信息，然后设置您的登录凭据即可。</p><h4 id="第二步：添加你的网站"><a href="#第二步：添加你的网站" class="headerlink" title="第二步：添加你的网站"></a>第二步：添加你的网站</h4><p>一旦你登录到 Cloudflare 账户，你会看到一个控制面板。在这里，你需要点击“添加站点”按钮。然后，在弹出的窗口中输入你的域名，并点击“扫描 DNS 记录”按钮。</p><h4 id="第三步：-Cloudflare-扫描-DNS-记录"><a href="#第三步：-Cloudflare-扫描-DNS-记录" class="headerlink" title="第三步： Cloudflare 扫描 DNS 记录"></a>第三步： Cloudflare 扫描 DNS 记录</h4><p> Cloudflare 会开始扫描你原始 DNS  服务商的 DNS 记录。这可能需要一些时间，但一般来说，它会在几秒钟内完成。确保它正确识别了你的所有 DNS 记录。</p><h4 id="第四步：选择-Cloudflare-的服务计划"><a href="#第四步：选择-Cloudflare-的服务计划" class="headerlink" title="第四步：选择 Cloudflare 的服务计划"></a>第四步：选择 Cloudflare 的服务计划</h4><p>完成 DNS 记录扫描后，选择免费的服务计划即可。</p><h4 id="第五步：更新域名服务器"><a href="#第五步：更新域名服务器" class="headerlink" title="第五步：更新域名服务器"></a>第五步：更新域名服务器</h4><p>这里我已 NameSilo 为例，在 NameSilo 上购买域名后，进入个人账户，选择 Mange Domain，即进入域名管理控制台。</p><img src="https://s2.loli.net/2024/03/31/XmHciV2fpq5BCol.png" alt="image-20240331205336934.png" style="zoom:50%;" /><p>点击 Change NameServer，如何将 DNS 服务器更改为 Cloudflare  提供的 DNS 服务器即可。</p><p>注意：这里还需要点击蓝色小球，将已有的 DNS 记录删除，方便之后在 Cloudflare 上添加</p><h4 id="第六步：等待-DNS-更新"><a href="#第六步：等待-DNS-更新" class="headerlink" title="第六步：等待 DNS 更新"></a>第六步：等待 DNS 更新</h4><p>这一步可能是整个过程中最需要耐心的一步。 DNS 更新可能需要一段时间生效，通常为24小时内。你可以使用 DNS 检查工具来验证 DNS 记录是否已更新为 Cloudflare 的服务器。</p><h4 id="第七步：配置-Cloudflare-设置（可选）"><a href="#第七步：配置-Cloudflare-设置（可选）" class="headerlink" title="第七步：配置 Cloudflare 设置（可选）"></a>第七步：配置 Cloudflare 设置（可选）</h4><p>一旦 DNS 更新完成，你可以返回 Cloudflare 控制面板，并根据你的需求配置其他设置，如DNS 记录、防火墙、SSL 等。</p><p>这里用 DNS 记录举例，将 wablers.github.io 与 DigitalOcean 的云服务器 IP 分别解析到不同的子域名下（NameSilo 支持 50 个子域名）</p><img src="https://s2.loli.net/2024/03/31/4pre3RMwldWxTSN.png" alt="image-20240331220552267.png" style="zoom:40%;" /><h4 id="第八步：验证设置"><a href="#第八步：验证设置" class="headerlink" title="第八步：验证设置"></a>第八步：验证设置</h4><p>最后，确保访问你的网站，以确保一切正常运行。同时，检查 Cloudflare 控制面板，确保所有设置都已正确应用。</p><p>通过按照以上步骤操作，你应该能够成功将你从其他域名服务商购买的域名解析到 Cloudflare 上。如果你遇到任何困难，记得查阅官方文档或向 Cloudflare 的支持团队寻求帮助。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h4 id=&quot;第一步：注册-Cloudflare-账户&quot;&gt;&lt;a href=&quot;#第一步：注册-Cloudflare-账户&quot; class=&quot;headerlink&quot; title=&quot;第一步：注册 Cloudflare 账户&quot;&gt;&lt;/a&gt;第一步：注册 Cloudflare 账户&lt;/h4&gt;&lt;</summary>
+      
+    
+    
+    
+    <category term="Knowledge Nuggets" scheme="https://wablers.github.io/categories/Knowledge-Nuggets/"/>
+    
+    
+    <category term="域名" scheme="https://wablers.github.io/tags/%E5%9F%9F%E5%90%8D/"/>
+    
+    <category term="CloudFlare" scheme="https://wablers.github.io/tags/CloudFlare/"/>
+    
+    <category term="IP Address" scheme="https://wablers.github.io/tags/IP-Address/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>领域模型</title>
+    <link href="https://wablers.github.io/2024/03/04/%E9%A2%86%E5%9F%9F%E6%A8%A1%E5%9E%8B/"/>
+    <id>https://wablers.github.io/2024/03/04/%E9%A2%86%E5%9F%9F%E6%A8%A1%E5%9E%8B/</id>
+    <published>2024-03-04T13:30:16.000Z</published>
+    <updated>2024-03-31T14:18:50.165Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="什么是领域模型"><a href="#什么是领域模型" class="headerlink" title="什么是领域模型"></a>什么是领域模型</h2><p>领域模型是软件工程中的一个概念，指的是对特定领域或问题领域的抽象和建模过程。它描述了在特定领域内的实体、概念、属性以及它们之间的关系。领域模型通常用于软件开发过程中，帮助开发人员理解和表达业务需求，以便设计和实现软件系统。</p><p>领域模型的目标是将领域知识转化为计算机程序能够理解和处理的形式。它可以帮助开发团队更好地沟通，减少需求理解和实现过程中的歧义，提高软件系统的质量和可维护性。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;什么是领域模型&quot;&gt;&lt;a href=&quot;#什么是领域模型&quot; class=&quot;headerlink&quot; title=&quot;什么是领域模型&quot;&gt;&lt;/a&gt;什么是领域模型&lt;/h2&gt;&lt;p&gt;领域模型是软件工程中的一个概念，指的是对特定领域或问题领域的抽象和建模过程。它描述了在特定领域内的实</summary>
+      
+    
+    
+    
+    <category term="Software Engineering" scheme="https://wablers.github.io/categories/Software-Engineering/"/>
+    
+    
+    <category term="领域驱动设计" scheme="https://wablers.github.io/tags/%E9%A2%86%E5%9F%9F%E9%A9%B1%E5%8A%A8%E8%AE%BE%E8%AE%A1/"/>
+    
+    <category term="项目管理" scheme="https://wablers.github.io/tags/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/"/>
+    
+    <category term="需求分析" scheme="https://wablers.github.io/tags/%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90/"/>
+    
+  </entry>
   
   <entry>
     <title>Mesh组网之单线复用与VLAN网口复用</title>
