@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://forgotten.top/2024/10/07/%E6%9C%89%E8%B6%A3%E7%9A%84%E5%B7%A5%E5%85%B7/</loc>
+    
+    <lastmod>2024-10-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://forgotten.top/2024/10/07/%E6%96%B0%E6%9C%BA%E5%99%A8-Hexo-Blog-%E6%81%A2%E5%A4%8D/</loc>
     
     <lastmod>2024-10-07</lastmod>
@@ -119,7 +128,7 @@
   </url>
   
   <url>
-    <loc>https://forgotten.top/2023/11/18/hello-world/</loc>
+    <loc>https://forgotten.top/2023/11/20/hello-world/</loc>
     
     <lastmod>2023-11-20</lastmod>
     
@@ -155,6 +164,41 @@
 
   
   <url>
+    <loc>https://forgotten.top/tags/Mesh/</loc>
+    <lastmod>2024-10-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://forgotten.top/tags/%E5%8D%95%E7%BA%BF%E5%A4%8D%E7%94%A8/</loc>
+    <lastmod>2024-10-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://forgotten.top/tags/VLAN/</loc>
+    <lastmod>2024-10-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://forgotten.top/tags/Vocabulary/</loc>
+    <lastmod>2024-10-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://forgotten.top/tags/Collection/</loc>
+    <lastmod>2024-10-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://forgotten.top/tags/Medium/</loc>
     <lastmod>2024-10-07</lastmod>
     <changefreq>weekly</changefreq>
@@ -176,35 +220,28 @@
   </url>
   
   <url>
-    <loc>https://forgotten.top/tags/Vocabulary/</loc>
+    <loc>https://forgotten.top/tags/App/</loc>
     <lastmod>2024-10-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://forgotten.top/tags/Collection/</loc>
+    <loc>https://forgotten.top/tags/Interesting/</loc>
     <lastmod>2024-10-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://forgotten.top/tags/Mesh/</loc>
+    <loc>https://forgotten.top/tags/Mac/</loc>
     <lastmod>2024-10-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://forgotten.top/tags/%E5%8D%95%E7%BA%BF%E5%A4%8D%E7%94%A8/</loc>
-    <lastmod>2024-10-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://forgotten.top/tags/VLAN/</loc>
+    <loc>https://forgotten.top/tags/Hexo/</loc>
     <lastmod>2024-10-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -273,17 +310,10 @@
     <priority>0.2</priority>
   </url>
   
-  <url>
-    <loc>https://forgotten.top/tags/Hexo/</loc>
-    <lastmod>2024-10-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
 
   
   <url>
-    <loc>https://forgotten.top/categories/LeetCode-Top100-Liked/</loc>
+    <loc>https://forgotten.top/categories/Knowledge-Nuggets/</loc>
     <lastmod>2024-10-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -297,7 +327,21 @@
   </url>
   
   <url>
-    <loc>https://forgotten.top/categories/Knowledge-Nuggets/</loc>
+    <loc>https://forgotten.top/categories/LeetCode-Top100-Liked/</loc>
+    <lastmod>2024-10-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://forgotten.top/categories/Tools/</loc>
+    <lastmod>2024-10-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://forgotten.top/categories/Log/</loc>
     <lastmod>2024-10-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -312,13 +356,6 @@
   
   <url>
     <loc>https://forgotten.top/categories/Personal-Development-and-Growth/</loc>
-    <lastmod>2024-10-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://forgotten.top/categories/Log/</loc>
     <lastmod>2024-10-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
