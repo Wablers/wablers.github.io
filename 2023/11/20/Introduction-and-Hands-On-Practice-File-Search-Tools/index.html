@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="Wablers">
+
+
+
+
+
+<title>Introduction and Hands-On Practice: File Search Tools | DevVerses</title>
+
+
+
+    <link rel="icon" href="/favicon.jpg">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const currentTheme = window.localStorage && window.localStorage.getItem('theme') || '';
+            const isDark = currentTheme === 'dark';
+            const pagebody = document.getElementsByTagName('body')[0]
+            if (isDark) {
+                pagebody.classList.add('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Dark"
+            } else {
+                pagebody.classList.remove('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Light"
+            }
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">DevVerses</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">DevVerses</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">Introduction and Hands-On Practice: File Search Tools</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">Wablers</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">November 20, 2023&nbsp;&nbsp;15:59:31</a>
+                        </span>
+                    
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <p>Upon mastering the foundational syntax of Rust Course, I conscientiously followed the scriptures to script the <em>File Search Tool</em> as my inaugural foray. Through this exercise, I augmented both my comprehension and proficiency in wielding Rust.</p>
+<h2 id="1-Overview-of-the-Project"><a href="#1-Overview-of-the-Project" class="headerlink" title="1. Overview of the Project"></a>1. Overview of the Project</h2><h3 id="1-1-Tree"><a href="#1-1-Tree" class="headerlink" title="1.1 Tree"></a>1.1 Tree</h3><p>.<br>├── Cargo.lock<br>├── Cargo.toml<br>├── poem.txt<br>├── src<br>│   ├── lib.rs<br>│   └── main.rs<br>└── target<br>    ├── CACHEDIR.TAG<br>    └── debug</p>
+<h3 id="1-2-Code"><a href="#1-2-Code" class="headerlink" title="1.2 Code"></a>1.2 Code</h3><figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// in main.rs</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Import necessary modules from the standard library.</span></span><br><span class="line"><span class="keyword">use</span> std::&#123;env, process&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Import the Config struct and run function from the minigrep module.</span></span><br><span class="line"><span class="keyword">use</span> minigrep::Config;</span><br><span class="line"></span><br><span class="line"><span class="comment">// The main function, where the execution of the program begins.</span></span><br><span class="line"><span class="keyword">fn</span> <span class="title function_">main</span>() &#123;</span><br><span class="line">    <span class="comment">// Collect command-line arguments into a vector of Strings.</span></span><br><span class="line">    <span class="keyword">let</span> <span class="variable">args</span>: <span class="type">Vec</span>&lt;<span class="type">String</span>&gt; = env::<span class="title function_ invoke__">args</span>().<span class="title function_ invoke__">collect</span>();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Attempt to create a Config instance from the command-line arguments.</span></span><br><span class="line">    <span class="keyword">let</span> <span class="variable">config</span> = Config::<span class="title function_ invoke__">from</span>(&amp;args).<span class="title function_ invoke__">unwrap_or_else</span>(|err| &#123;</span><br><span class="line">        <span class="comment">// If there&#x27;s an error, print a message and exit the program with an error code.</span></span><br><span class="line">        <span class="built_in">println!</span>(<span class="string">&quot;Problem parsing arguments: &#123;err&#125;&quot;</span>);</span><br><span class="line">        process::<span class="title function_ invoke__">exit</span>(<span class="number">1</span>);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Print the search query and file path to the console.</span></span><br><span class="line">    <span class="built_in">println!</span>(<span class="string">&quot;Search for &#123;&#125;&quot;</span>, config.query);</span><br><span class="line">    <span class="built_in">println!</span>(<span class="string">&quot;In file &#123;&#125;&quot;</span>, config.file_path);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Attempt to run the minigrep::run function with the provided Config.</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">let</span> <span class="variable">Err</span>(e) = minigrep::<span class="title function_ invoke__">run</span>(config) &#123;</span><br><span class="line">        <span class="comment">// If there&#x27;s an error, print a message and exit the program with an error code.</span></span><br><span class="line">        <span class="built_in">println!</span>(<span class="string">&quot;Application error: &#123;e&#125;&quot;</span>);</span><br><span class="line">        process::<span class="title function_ invoke__">exit</span>(<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// lib.rs</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Import necessary modules from the standard library.</span></span><br><span class="line"><span class="keyword">use</span> std::error::Error;</span><br><span class="line"><span class="keyword">use</span> std::fs;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Define a public Config struct with query and file_path fields.</span></span><br><span class="line"><span class="keyword">pub</span> <span class="keyword">struct</span> <span class="title class_">Config</span> &#123;</span><br><span class="line">    <span class="keyword">pub</span> query: <span class="type">String</span>,</span><br><span class="line">    <span class="keyword">pub</span> file_path: <span class="type">String</span>,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Implement methods for the Config struct.</span></span><br><span class="line"><span class="keyword">impl</span> <span class="title class_">Config</span> &#123;</span><br><span class="line">    <span class="comment">// A public method to create a Config instance from command-line arguments.</span></span><br><span class="line">    <span class="keyword">pub</span> <span class="keyword">fn</span> <span class="title function_">from</span>(args: &amp;[<span class="type">String</span>]) <span class="punctuation">-&gt;</span> <span class="type">Result</span>&lt;Config, &amp;<span class="symbol">&#x27;static</span> <span class="type">str</span>&gt; &#123;</span><br><span class="line">        <span class="comment">// Check if there are enough command-line arguments.</span></span><br><span class="line">        <span class="keyword">if</span> args.<span class="title function_ invoke__">len</span>() &lt; <span class="number">3</span> &#123;</span><br><span class="line">            <span class="comment">// If not, return an error with a static string message.</span></span><br><span class="line">            <span class="keyword">return</span> <span class="title function_ invoke__">Err</span>(<span class="string">&quot;not enough arguments&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// Extract the query and file_path from command-line arguments.</span></span><br><span class="line">        <span class="keyword">let</span> <span class="variable">query</span> = args[<span class="number">1</span>].<span class="title function_ invoke__">clone</span>();</span><br><span class="line">        <span class="keyword">let</span> <span class="variable">file_path</span> = args[<span class="number">2</span>].<span class="title function_ invoke__">clone</span>();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Return a Result containing a new Config instance.</span></span><br><span class="line">        <span class="title function_ invoke__">Ok</span>(Config &#123; query, file_path &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// A public function to perform the main functionality of the program.</span></span><br><span class="line"><span class="keyword">pub</span> <span class="keyword">fn</span> <span class="title function_">run</span>(config: Config) <span class="punctuation">-&gt;</span> <span class="type">Result</span>&lt;(), <span class="type">Box</span>&lt;<span class="keyword">dyn</span> Error&gt;&gt; &#123;</span><br><span class="line">    <span class="comment">// Read the contents of the file specified in the Config.</span></span><br><span class="line">    <span class="keyword">let</span> <span class="variable">contents</span> = fs::<span class="title function_ invoke__">read_to_string</span>(config.file_path)</span><br><span class="line">        .<span class="title function_ invoke__">expect</span>(<span class="string">&quot;Should have been able to read the file&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Print the contents of the file to the console.</span></span><br><span class="line">    <span class="built_in">println!</span>(<span class="string">&quot;With text:\n&#123;contents&#125;&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Return a Result indicating success.</span></span><br><span class="line">    <span class="title function_ invoke__">Ok</span>(())</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-3-Elaboration"><a href="#1-3-Elaboration" class="headerlink" title="1.3 Elaboration"></a>1.3 Elaboration</h3><ul>
+<li><p><code>collect</code> 方法其实并不是<code>std::env</code>包提供的，而是迭代器自带的方法(<code>env::args()</code> 会返回一个迭代器)，它会将迭代器消费后转换成我们想要的集合类型，关于迭代器和 <code>collect</code> 的具体介绍，请参考<a target="_blank" rel="noopener" href="https://course.rs/advance/functional-programing/iterator.html">这里</a></p>
+</li>
+<li><p>关注点分离(Separation of Concerns)</p>
+<ul>
+<li><p>将程序分割为 <code>main.rs</code> 和 <code>lib.rs</code>，并将程序的逻辑代码移动到后者内</p>
+</li>
+<li><p>命令行解析属于非常基础的功能，严格来说不算是逻辑代码的一部分，因此还可以放在 <code>main.rs</code> 中</p>
+</li>
+</ul>
+</li>
+<li><p><code>clone</code> 的得与失</p>
+<ul>
+<li><code>Config</code> 中存储的并不是 <code>&amp;str</code> 这样的引用类型，而是一个 <code>String</code> 字符串，也就是 <code>Config</code> 并没有去借用外部的字符串，而是拥有内部字符串的所有权</li>
+<li><code>clone</code> 直接完整的复制目标数据，无需被所有权、借用等问题所困扰，但是它也有其缺点，那就是有一定的性能损耗</li>
+</ul>
+</li>
+<li><p><code>Config::from</code>的错误处理</p>
+<ul>
+<li>当 <code>Result</code> 包含错误时，我们不再调用 <code>panic</code> 让程序崩溃，而是通过 <code>process::exit(1)</code> 来终结进程，其中 <code>1</code> 是一个信号值(事实上非 0 值都可以)，通知调用我们程序的进程，程序是因为错误而退出的</li>
+<li><code>unwrap_or_else</code> 是定义在 <code>Result&lt;T,E&gt;</code> 上的常用方法，如果 <code>Result</code> 是 <code>Ok</code>，那该方法就类似 <code>unwrap</code>：返回 <code>Ok</code> 内部的值；如果是 <code>Err</code>，就调用<a target="_blank" rel="noopener" href="https://course.rs/advance/functional-programing/closure.html">闭包</a>中的自定义代码对错误进行进一步处理</li>
+<li><code>config</code> 变量的值是一个 <code>Config</code> 实例，而 <code>unwrap_or_else</code> 闭包中的 <code>err</code> 参数，它的类型是 <code>&#39;static str</code>，值是 “not enough arguments” 那个字符串字面量</li>
+</ul>
+</li>
+<li><p><code>run</code>的错误处理</p>
+<ul>
+<li>值得注意的是这里的 <code>Result&lt;(), Box&lt;dyn Error&gt;&gt;</code> 返回类型，首先我们的程序无需返回任何值，但是为了满足 <code>Result&lt;T,E&gt;</code> 的要求，因此使用了 <code>Ok(())</code> 返回一个单元类型 <code>()</code></li>
+<li>最重要的是 <code>Box&lt;dyn Error&gt;</code>，这是一个<code>Error</code> 的特征对象(为了使用 <code>Error</code>，我们通过 <code>use std::error::Error;</code> 进行了引入)，它表示函数返回一个类型，该类型实现了 <code>Error</code> 特征，就无需指定具体的错误类型</li>
+<li>否则还需要查看 <code>fs::read_to_string</code> 返回的错误类型，然后复制到 <code>run</code> 函数返回中，这么做一个是麻烦，最主要的是，一旦这么做，意味着我们无法在上层调用时统一处理错误，但是 <code>Box&lt;dyn Error&gt;</code> 不同，其它函数也可以返回这个特征对象，然后调用者就可以使用统一的方式来处理不同函数返回的 <code>Box&lt;dyn Error&gt;</code></li>
+</ul>
+</li>
+<li><p><code>if let</code> 的使用让代码变得更简洁，可读性更好。原因这里并不关注 <code>run</code> 返回的 <code>Ok</code> 值，因此只需要用 <code>if let</code> 去匹配是否存在错误即可</p>
+</li>
+</ul>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>Wablers</span>
+                    </p>
+                
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright (c) 2023 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</span>
+                    </p>
+                
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2024/01/21/LeetCode-N0-49-%E5%AD%97%E6%AF%8D%E5%BC%82%E4%BD%8D%E8%AF%8D%E5%88%86%E7%BB%84/">LeetCode No.49-字母异位词分组</a>
+            
+            
+            <a class="next" rel="next" href="/2023/11/18/hello-world/">Hello World</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© 2024 Wablers | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>
